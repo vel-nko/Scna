@@ -1,12 +1,3 @@
-.page-logo
-	position: fixed
-	top: 20px
-	left: 10px
-	z-index: 99
-	@include bp(1280, min)
-		left: 60px
-	@include bp(1440, min)
-		left: 90px
 .hero-section
 	background-size: cover
 	background-position: center
@@ -18,9 +9,28 @@
 	align-items: center
 	position: relative
 	min-height: 70vh
-	margin-bottom: 190px
+	margin-bottom: 144px
 	@include bp(1280, min)
 		min-height: 728px
+
+	.logo
+		position: absolute
+		top: 20px
+		left: 10px
+		z-index: 99
+		z-index: 1
+		display: flex
+		align-items: center
+		text-transform: uppercase
+		color: $white
+		@include bp(1280, min)
+			left: 60px
+		@include bp(1440, min)
+			left: 90px
+
+		img 
+      margin-right: 10px
+
 
 	.head
 		max-width: max-content
@@ -37,10 +47,12 @@
 		padding: 0 10px
 		left: 50%
 		transform: translateX(-50%) translateY(70%)
-		max-width: 940px
+		max-width: 962px
 		width: 100%
 		@include bp(1280, min)
 			top: auto 
+			transform: translateX(-50%) translateY(48%)
+
 
 		h3
 			margin-bottom: 5px
@@ -59,6 +71,8 @@
 				padding: 26px 26px 26px 81px
 				position: relative
 				border-radius: 25px
+				flex: 0 0 calc(33.33% - 62px)
+
 
 			svg
 				margin-bottom: 5px
@@ -73,9 +87,13 @@
 .ui-info
 	padding-bottom: 20px
 	padding-top: 20px
-	h2
+	.content
+		@include bp(1440, min)
+			padding: 0 64px
+
+	h3
 		margin-bottom: 40px
-		max-width: 600px
+		max-width: 700px
 		@include bp(1280, min)
 			margin-bottom: 79px
 
@@ -91,8 +109,8 @@
 			max-width: 263px
 			padding-right: 10px
 			@include bp(1280, min)
-				flex: 0 0 calc(25% - 46px)
-
+				flex: 0 0 calc(25% - 77px)
+				padding-right: 0
 
 		.number 
 			width: 37px
@@ -109,12 +127,15 @@
 				width: 67px
 				height: 67px
 				margin-bottom: 40px
-		h4 
+		h5
 			margin-bottom: 5px
 
 .review-section 
-	padding-bottom: 100px
+	padding-bottom: 58px
 	text-align: center
+	@include bp(1280, min)
+		padding-bottom: 109px
+
 	.content 
 		padding: 0 25px
 		max-width: 945px 
@@ -123,18 +144,16 @@
 		position: relative
 		overflow: hidden
 		@include bp(1280, min)
-			padding-top: 119px
+			padding-top: 18px
 
-	h2 
+	h2
+		color: $black
 		margin-bottom: 20px
 		@include bp(1280, min)
 			margin-bottom: 53px
 
-	.gallery-top
-		margin-bottom: 20px
-
 	.sliders-holder 
-		max-width: 600px
+		max-width: 542px
 		margin: 0 auto
 		position: relative
 		overflow: hidden
@@ -172,12 +191,20 @@
 			&:before, &:after
 				border-color: $gray
 
-
+	.gallery-top 
+		margin-bottom: 20px
+		max-width: 800px
+		@include bp(1280, min)
+			font-weight: 500 
+			font-size: 20px
+			line-height: 1.4
+			margin-bottom: 40px
 	.gallery-thumbs 
 		width: 30%	
 		overflow: visible
 		margin: 0
 		max-width: 150px
+		@include bp(1280, min)
 		.img-holder 
 			overflow: hidden
 			width: 50px
@@ -194,11 +221,6 @@
 			font-size: 14px 
 			opacity: 0
 
-			h4 
-				font-size: 18px 
-				margin-bottom: 5px
-				color: $black
-
 		.swiper-slide 
 			opacity: 0.6
 			&.active
@@ -206,12 +228,138 @@
 				.name
 					opacity: 1
 
+.partners 
+	text-align: center 
 
+	.partners-row
+		padding: 27px 0 
+		display: flex 
+		flex-wrap: wrap
+		justify-content: space-around 
+		.partners-item 
+			flex: 0 0 33.33% 
+			padding: 0 10px 
+			margin-bottom: 20px
+			display: flex 
+			align-items: center
+			justify-content: center
+			max-width: 190px
 
-			
+.map-section 
+	padding-bottom: 45px
+	overflow: hidden
+	@include bp(1280, min)
+		display: flex 
+		align-items: center
 
+	.map
+		width: 100%
+		position: relative
+		padding-top: 100%
+		left: 0
+		box-shadow: 0 30px 60px 0 rgba(0,0,0,0.20);
+		@include bp(1280, min)
+			padding-top: 0
+			height: 705px
+			flex: 0 0 calc(50% + 60px)
+			margin-left: -60px
+		@include bp(1440, min)
+			flex: 0 0 calc(50% + 90px)
 
+			margin-left: -90px
 		
+
+		.address-holder 
+			font-size: 14px
+			width: 230px
+			border-radius: 5px 
+			padding: 30px
+			position: absolute 
+			z-index: 2
+			top: 20px
+			left: 50%
+			transform: translateX(-50%)
+			background-image: linear-gradient(-187deg, #FF7000 0%, #FF4000 99%)
+			@include bp(1280, min)
+				top: 171px
+			address 
+				font-style: normal
+				font-size: 18px
+				color: #FFFFFF
+				letter-spacing: -0.5px
+				margin-bottom: 5px
+
+			a 
+				display: block
+				color: $white 
+				margin-bottom: 5px
+				&:hover 
+					text-decoration: underline
+
+		iframe 
+			position: absolute 
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+	.form-holder
+		flex: 0 0 50%
+		padding: 45px 0
+		max-width: 550px 
+		margin: 0 auto
+		@include bp(1280, min)
+			padding-left: 30px
+			margin: 0
+
+		h2
+			color: $black
+			text-align: center
+			margin-bottom: 21px
+			font-size: 18px
+			@include bp(1280, min)
+				font-size: 48px
+
+		.form-row 
+			display: flex 
+			flex-wrap: wrap
+			justify-content: space-between
+			input 
+				@include bp(1280, min)
+					flex: 0 0 calc(50% - 16px)
+
+
+		input, textarea
+			width: 100%
+			padding: 20px 30px 
+			border-radius: 5px 
+			border: 1px solid $gray 
+			margin-bottom: 21px
+			font-size: 14px
+			color: $light-black
+			resize: none 
+			&:focus
+				box-shadow: 0 10px 20px 0 rgba(0,0,0,0.10);
+			&::-webkit-input-placeholder 
+				color: $light-black
+			&::-moz-placeholder
+				color: $light-black
+			&:-moz-placeholder
+				color: $light-black
+			&::-ms-input-placeholder
+				color: $light-black
+
+		.btn-form 
+			margin: 36px auto 0 
+			background-image: linear-gradient(-187deg, #FF7000 0%, #FF4000 99%)
+			box-shadow: 20px 20px 60px 0 rgba(230,56,0,0.23)
+			font-size: 16px
+			color: $white
+			border-radius: 15px 
+			padding: 15px 55px 
+			max-width: max-content
+			display: block
+			cursor: pointer
 			
 				
 
