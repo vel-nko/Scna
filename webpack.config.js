@@ -81,7 +81,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: PATH.app + '/index.html',
-			chunks: ['vendors~common', 'common', 'main']
+			chunks: ['vendors~common', 'common']
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'package.html',
+			template: PATH.app + '/package.html',
+			chunks: ['vendors~common', 'common']
 		}),
 	],
 	module: {

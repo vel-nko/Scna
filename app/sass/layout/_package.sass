@@ -1,0 +1,265 @@
+.cloud-section
+	display: flex
+	justify-content: space-between
+	padding-top: 93px
+	padding-bottom: 70px
+	color: $light-black
+
+	@include bp(1280, min)
+
+	h1
+		color: $black
+		margin-bottom: 10px
+
+	.col
+		&:first-of-type
+			flex: 0 0 40%
+			@include bp(1280, min)
+			flex: 0 0 64%
+
+		&:last-of-type
+			flex-grow: 1
+			padding-left: 20px
+			display: flex
+			justify-content: center
+
+			img
+				object-fit: contain
+				object-position: center
+
+	.text
+		@include bp(1280, min)
+			margin-bottom: 156px
+		p
+			text-overflow: ellipsis
+			display: -webkit-box
+			-webkit-line-clamp: 6
+			-webkit-box-orient: vertical
+			overflow: hidden
+			@include bp(1280, min)
+				text-overflow: none
+				overflow: visible
+
+	.buttons-holder
+		@include bp(1280, min)
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			max-width: 500px
+			align-items: center
+
+		.btn-primary
+			margin-bottom: 20px
+			@include bp(1280, min)
+				margin-bottom: 0
+
+.text-section
+	text-align: center
+	max-width: 700px 
+	margin: 0 auto
+	padding: 0 20px 56px
+	color: $gray
+	h2 
+		color: $black
+		font-weight: bold
+		@include bp(1280, min)
+			font-size: 62px
+			margin-bottom: 15px
+
+.choose-package
+	padding-bottom: 42px
+	@include bp(1280, min)
+		padding-bottom: 142px
+
+	.head 
+		color: $gray
+		max-width: 700px 
+		text-align: center
+		margin: 0 auto
+		margin-bottom: 30px
+		@include bp(1280, min)
+			margin-bottom: 74px
+		h2 
+			color: $black
+			font-weight: bold
+			font-size: 27px
+			@include bp(1280, min)
+				font-size: 62px
+				margin-bottom: 15px
+
+	.package-row 
+		max-width: max-content
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+		margin: 0 auto
+
+	.package-item
+		box-shadow: 0 20px 40px -17px rgba(0,0,0,0.10)
+		border-radius: 45px
+		padding: 78px 29px
+		min-width: 293px
+		margin: 0 15px
+		text-align: center
+		z-index: 1
+		position: relative
+		margin-bottom: 30px
+		border: 2px solid $white
+		transition: border-color .3s ease
+
+		&:hover
+			border-color: $orange
+
+		h2 
+			font-size: 36px
+			margin-bottom: 21px
+
+		.list
+			padding-top: 25px
+			position: relative
+
+			&:before 
+				content: ''
+				position: absolute
+				top: 0
+				left: 50%
+				transform: translateX(-50%)
+				height: 5px
+				background: #979797
+				border-radius: 5px
+				width: 50px 
+
+		.list-item 
+			color: #454545;
+			&:not(:last-of-type)
+				margin-bottom: 17px
+
+.products-section
+	padding-bottom: 100px
+	@include bp(1280, min)
+		padding-bottom: 182px
+
+	.head 
+		color: $gray
+		max-width: 700px 
+		text-align: center
+		margin: 0 auto
+		margin-bottom: 30px
+		@include bp(1280, min)
+			margin-bottom: 74px
+		h2 
+			color: $black
+			font-weight: bold
+			font-size: 27px
+			@include bp(1280, min)
+				font-size: 62px
+				margin-bottom: 15px
+
+	.product-row
+		display: flex
+		flex-wrap: wrap 
+		justify-content: center
+		margin: 0 -10px
+		@include bp(1280, min)
+			justify-content: space-between
+
+		.product-item
+			border-radius: 5px
+			overflow: hidden
+			position: relative
+			margin: 0 10px 25px
+			width: 321px
+			@include bp(1280, min)
+				flex:  0 0 calc(25% - 21px)
+				margin: 0
+
+			img 
+				object-fit: cover
+				object-position: center
+				max-width: none
+				width: 100%
+				height: 100%
+
+			.text-item 
+				position: absolute
+				bottom: 0
+				left: 0
+				right: 0
+				background-color: rgba(0,0,0, .3)
+				padding: 34px 44px
+				color: $white
+				@include bp(1280, min)
+					opacity: 0
+					transition: opacity .3s ease
+
+
+				h5 
+					font-size: 18px
+					color: $white
+					margin-bottom: 24px
+			&:hover 
+				.text-item 
+					opacity: 1
+
+.faq-section
+	padding-bottom: 68px
+	@include bp(1280, min)
+		padding-bottom: 90px
+
+	h2 
+		color: $black
+		font-size: 27px
+		margin-bottom: 30px
+		font-weight: bold
+		text-align: center
+		@include bp(1280, min)
+			font-size: 62px
+			margin-bottom: 119px
+
+	.faq-accordion 
+		max-width: 570px
+		margin: 0 auto
+		@include bp(1280, min)
+			max-width: 1200px
+			display: flex 
+			justify-content: space-between
+			flex-wrap: wrap
+			align-items: flex-start
+
+	.accordion-item 
+		border: 1px solid $gray 
+		border-radius: 6px
+		padding: 20px 26px
+		transition: bacground .5s ease
+		margin-bottom: 20px
+		@include bp(1280, min)
+			width: 570px	
+		&.active 
+			background: #FC916F
+			color: $white
+
+	.accordion-panel 
+		font-size: 16px
+		position: relative
+		padding-right: 10px
+		cursor: pointer
+		&:before 
+			content: ''
+			position: absolute
+			z-index: 1
+			right: 0
+			top: 5px
+			border-top: 5px solid transparent
+			border-bottom: 5px solid transparent
+			border-left: 5px solid $black
+			transition: all .5s ease
+
+		&.active
+			&:before
+				border-left: 5px solid $white
+				transform: rotate(90deg)
+
+	.accordion-content 
+		padding-top: 16px
+		font-size: 14px
+
