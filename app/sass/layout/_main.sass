@@ -140,7 +140,7 @@
 		padding: 0 25px
 		max-width: 945px 
 		margin: 0 auto
-		line-height: calc(21px / 14px)
+		line-height: 1.5
 		position: relative
 		overflow: hidden
 		@include bp(1280, min)
@@ -163,6 +163,7 @@
 		height: 20px
 		position: absolute
 		z-index: 2
+		cursor: pointer
 		&:before, &:after
 			content: ''
 			position: absolute
@@ -223,6 +224,9 @@
 
 		.swiper-slide 
 			opacity: 0.6
+			min-height: 94px
+			padding-bottom: 10px
+			cursor: pointer
 			&.active
 				opacity: 1
 				.name
@@ -251,6 +255,7 @@
 	@include bp(1280, min)
 		display: flex 
 		align-items: center
+		margin-bottom: 
 
 	.map
 		width: 100%
@@ -338,6 +343,7 @@
 			font-size: 14px
 			color: $light-black
 			resize: none 
+			transition: box-shadow .3s ease 
 			&:focus
 				box-shadow: 0 10px 20px 0 rgba(0,0,0,0.10);
 			&::-webkit-input-placeholder 
@@ -352,7 +358,6 @@
 		.btn-form 
 			margin: 36px auto 0 
 			background-image: linear-gradient(-187deg, #FF7000 0%, #FF4000 99%)
-			box-shadow: 20px 20px 60px 0 rgba(230,56,0,0.23)
 			font-size: 16px
 			color: $white
 			border-radius: 15px 
@@ -360,6 +365,12 @@
 			max-width: max-content
 			display: block
 			cursor: pointer
+			box-shadow: 20px 20px 60px 0 rgba(230,56,0,0.23)
+			transition: box-shadow .3s ease 
+			&:hover 
+				box-shadow: none
+
+
 			
 				
 
