@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+
+body > *
+	font-family: $ff-base
+	font-size: 16px
+
+h1 
+	font-style: 28px
+	font-weight: bold 
+	color: $white
+	margin-bottom: 12px
+	@include bp(1280, min)
+		font-size: 82px
+
+h3 
+	font-weight: bold 
+	line-height: calc(22 / 16)
+	font-style: 16px
+	color: $black
+
+
+p
+	margin-bottom: 15px
+
+input, textarea, button
+	font-family: $ff-base
