@@ -4,62 +4,123 @@
 	left: 10px
 	z-index: 99
 	@include bp(1280, min)
-	left: 60px
+		left: 60px
 	@include bp(1440, min)
-	left: 90px
+		left: 90px
 .hero-section
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
 	color: $white
-	padding: 20px 10px
+	padding-top: 20px
+	padding-bottom: 20px
 	display: flex
 	align-items: center
 	position: relative
 	min-height: 70vh
+	margin-bottom: 190px
 	@include bp(1280, min)
-	padding: calc(50% - 580px)
-	@include bp(1440, min)
-	padding: calc(50% - 630px)
+		min-height: 728px
 
 	.head
 		max-width: max-content
 		font-size: 20px
 		@include bp(1280, min)
-		font-size: 24px
+			font-size: 24px
 		.text
 			max-width: 560px
+	.about-row
+		display: flex
+		justify-content: space-between
+		position: absolute
+		bottom: 0
+		padding: 0 10px
+		left: 50%
+		transform: translateX(-50%) translateY(70%)
+		max-width: 940px
+		width: 100%
+		@include bp(1280, min)
+			top: auto 
 
-		.about-row
-			display: flex
-			justify-content: space-between
-			position: absolute
-			top: calc(100% - 30px)
-			padding: 0 10px
-			left: 50%
-			transform: translateX(-50%)
-			max-width: 940px
-			width: 100%
-			h3
+		h3
+			margin-bottom: 5px
+			word-break: break-all
+
+		.about-item
+			color: $gray
+			background-color: $white
+			border-radius: 11px
+			padding: 5px
+			flex: 0 0 calc(33.33% - 8px)
+			max-width: 300px
+			background: #FFFFFF
+			box-shadow: 0 40px 80px 0 rgba(0,0,0,0.10)
+			@include bp(1280, min)
+				padding: 26px 26px 26px 81px
+				position: relative
+				border-radius: 25px
+
+			svg
 				margin-bottom: 5px
-				.about-item
-					color: $gray
-					background-color: $white
-					border-radius: 11px
-					padding: 5px
-					flex: 0 0 calc(33.33% - 17px)
-					max-width: 252px
-					background: #FFFFFF
-					box-shadow: 0 40px 80px 0 rgba(0,0,0,0.10)
-					@include bp(1280, min)
-					padding: 26px 26px 26px 81px
-					position: relative
-					border-radius: 25px
+				@include bp(1280, min)
+					position: absolute
+					left: 15px
+					top: 50%
+					transform: translateY(-50%)
+					height: 50px
+					width: 50px
 
-					svg
-						margin-bottom: 5px
-						@include bp(1280, min)
-						position: absolute
-						left: 26px
-						top: 50%
-						transform: translateY(-50%)
+.ui-info
+	padding-bottom: 20px
+	padding-top: 20px
+	h2
+		margin-bottom: 40px
+		max-width: 600px
+		@include bp(1280, min)
+			margin-bottom: 79px
+
+	.info-row
+		display: flex 
+		flex-wrap: wrap 
+		justify-content: space-between
+
+		.info-item 
+			flex: 0 0 calc(50% - 12px)
+			margin-bottom: 40px
+			color: $gray
+			max-width: 263px
+			padding-right: 10px
+			@include bp(1280, min)
+				flex: 0 0 calc(25% - 46px)
+
+
+		.number 
+			width: 37px
+			height: 37px
+			border-radius: 50%
+			color: $white 
+			display: flex 
+			align-items: center 
+			justify-content: center
+			margin-bottom: 10px
+			background-image: linear-gradient(-187deg, #FF7000 0%, #FF4000 99%);
+			box-shadow: 0px 11px 60px 0 rgba(230,56,0,0.48)
+			@include bp(1280, min)
+				width: 67px
+				height: 67px
+				margin-bottom: 40px
+		h4 
+			margin-bottom: 5px
+
+.review-section 
+	padding-bottom: 100px
+
+	h2 
+		margin-bottom: 20px
+
+		
+			
+				
+
+
+

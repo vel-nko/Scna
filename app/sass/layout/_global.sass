@@ -1,2 +1,12 @@
 .page__w
-    position: relative
+	position: relative
+
+.section
+	padding-left: 10px
+	padding-right: 10px
+	@include bp(1280, min)
+		padding-left: calc(50% - 580px)
+		padding-right: calc(50% - 580px)	
+	@include bp(1440, min)
+		padding-left: calc(50% - 630px)
+		padding-right: calc(50% - 630px)	
