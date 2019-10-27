@@ -114,9 +114,102 @@
 
 .review-section 
 	padding-bottom: 100px
+	text-align: center
+	.content 
+		padding: 0 25px
+		max-width: 945px 
+		margin: 0 auto
+		line-height: calc(21px / 14px)
+		position: relative
+		overflow: hidden
+		@include bp(1280, min)
+			padding-top: 119px
 
 	h2 
 		margin-bottom: 20px
+		@include bp(1280, min)
+			margin-bottom: 53px
+
+	.gallery-top
+		margin-bottom: 20px
+
+	.sliders-holder 
+		max-width: 600px
+		margin: 0 auto
+		position: relative
+		overflow: hidden
+
+	.btn 
+		width: 20px
+		height: 20px
+		position: absolute
+		z-index: 2
+		&:before, &:after
+			content: ''
+			position: absolute
+			width: 70%
+			border-bottom: 2px solid $orange
+			transform-origin: right
+			right: 0
+
+		&:before
+			top: -1px
+			transform: rotate(-45deg)
+
+		&:after
+			bottom: 0
+			transform: rotate(45deg)
+
+		&.next 
+			right: 0
+			bottom: 50px
+			transform: rotate(180deg)
+
+		&.prev 
+			left: 0
+			bottom: 50px
+		&.disabled
+			&:before, &:after
+				border-color: $gray
+
+
+	.gallery-thumbs 
+		width: 30%	
+		overflow: visible
+		margin: 0
+		max-width: 150px
+		.img-holder 
+			overflow: hidden
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			margin-bottom: 10px
+			margin: 0 auto
+			img 
+				object-fit: cover 
+				object-position: center
+
+		.name
+			color: $gray
+			font-size: 14px 
+			opacity: 0
+
+			h4 
+				font-size: 18px 
+				margin-bottom: 5px
+				color: $black
+
+		.swiper-slide 
+			opacity: 0.6
+			&.active
+				opacity: 1
+				.name
+					opacity: 1
+
+
+
+			
+
 
 		
 			
