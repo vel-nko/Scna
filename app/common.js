@@ -14,6 +14,7 @@ script('https://unpkg.com/swiper/js/swiper.min.js', function () {
       swiper: galleryTop
     }
   });
+  
   var galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
     freeMode: true,
@@ -23,6 +24,22 @@ script('https://unpkg.com/swiper/js/swiper.min.js', function () {
       nextEl: '.review-section .btn.next',
       prevEl: '.review-section .btn.prev',
       disabledClass: 'disabled'
+    },
+  });
+
+  var galleryAbout = new Swiper('.gallery-about', {
+    slideActiveClass: 'active',
+    navigation: {
+      nextEl: '.slider-about .btn.next',
+      prevEl: '.slider-about .btn.prev',
+      disabledClass: 'disabled'
+    },
+    pagination: {
+      el: '.slider-about .slider-pagination',
+      type: 'bullets',
+      bulletClass: 'bullet',
+      bulletActiveClass: 'active',
+      clickable: true
     },
   });
 
@@ -84,4 +101,24 @@ script('https://unpkg.com/swiper/js/swiper.min.js', function () {
     }
   }
 
-})()
+})();
+//navigation
+(function(){
+  $('.nav-link').on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $(this).hasClass('active') ? MenuOpen() : MenuCLose()
+  })
+  function MenuOpen() {
+    $('body').addClass('nav-active').css({
+      'height' : '100vh',
+      'overflow' : 'hidden'
+    })
+  }
+  function MenuCLose() {
+    $('body').removeClass('nav-active').css({
+      'height' : 'auto',
+      'overflow' : 'auto'
+    })
+  }
+}());

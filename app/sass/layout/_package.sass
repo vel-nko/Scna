@@ -1,11 +1,12 @@
 .cloud-section
 	display: flex
 	justify-content: space-between
-	padding-top: 93px
+	align-items: center
+	padding-top: 69px
 	padding-bottom: 70px
 	color: $light-black
-
 	@include bp(1280, min)
+		padding-bottom: 85px
 
 	h1
 		color: $black
@@ -15,13 +16,14 @@
 		&:first-of-type
 			flex: 0 0 40%
 			@include bp(1280, min)
-			flex: 0 0 64%
+				flex: 0 0 56%
 
 		&:last-of-type
 			flex-grow: 1
 			padding-left: 20px
 			display: flex
 			justify-content: center
+			max-width: max-content
 
 			img
 				object-fit: contain
@@ -29,7 +31,7 @@
 
 	.text
 		@include bp(1280, min)
-			margin-bottom: 156px
+			margin-bottom: 122px
 		p
 			text-overflow: ellipsis
 			display: -webkit-box
@@ -45,7 +47,7 @@
 			display: flex
 			flex-wrap: wrap
 			justify-content: space-between
-			max-width: 500px
+			max-width: 459px
 			align-items: center
 
 		.btn-primary
@@ -59,6 +61,10 @@
 	margin: 0 auto
 	padding: 0 20px 56px
 	color: $gray
+	font-weight: 400
+	@include bp(1280, min)
+		font-size: 16px	
+
 	h2 
 		color: $black
 		font-weight: bold
@@ -229,7 +235,6 @@
 	.accordion-item 
 		border: 1px solid $gray 
 		border-radius: 6px
-		padding: 20px 26px
 		transition: bacground .5s ease
 		margin-bottom: 20px
 		@include bp(1280, min)
@@ -239,6 +244,7 @@
 			color: $white
 
 	.accordion-panel 
+		padding: 20px 26px
 		font-size: 16px
 		position: relative
 		padding-right: 10px
@@ -247,8 +253,8 @@
 			content: ''
 			position: absolute
 			z-index: 1
-			right: 0
-			top: 5px
+			right: 26px
+			top: 25px
 			border-top: 5px solid transparent
 			border-bottom: 5px solid transparent
 			border-left: 5px solid $black
@@ -260,6 +266,201 @@
 				transform: rotate(90deg)
 
 	.accordion-content 
-		padding-top: 16px
+		padding: 16px 26px
 		font-size: 14px
+
+.about-section
+	padding-bottom: 48px
+
+	.slider-about
+		position: relative
+		max-width: 600px
+		margin: 0 auto
+		margin-bottom: 129px
+		@include bp(1280, min)
+			max-width: none 
+
+
+		.swiper-slide
+			display: flex
+			flex-direction: column 
+			@include bp(1280, min)
+				flex-direction: row
+				align-items: center
+
+		.img-holder
+			overflow: hidden
+			border-radius: 50%
+			width: 245px
+			height: 245px
+			margin: 0 auto
+			box-shadow: 10px 10px 30px -10px rgba(0,0,0,0.11);
+			margin-bottom: 20px
+			@include bp(1280, min)
+				order: 2
+				width: 517px
+				height: 517px
+				margin: 0 0 20px
+
+		.text-holder 
+			padding: 10px
+			order: 2
+			color: $gray 
+			font-size: 15px
+			@include bp(1280, min)
+				order: 1
+				width: 577px
+				font-size: 16px
+				padding-right: 22px
+
+		h2 
+			font-size: 22px 
+			font-weight: 700
+			color: $black
+			@include bp(1280, min)
+				font-size: 51px
+
+		.slider-pagination 
+			display: flex
+			justify-content: center
+			align-items: center
+			.bullet 
+				width: 10px
+				height: 10px
+				border: 1px solid $gray 
+				border-radius: 50%
+				transition: all .3s ease
+				cursor: pointer
+				&:not(:last-of-type)
+					margin-right: 10px
+
+				&.active 
+					border-color: $orange
+					background: $orange
+
+		.control-holder
+			@include bp(1280, min)
+				display: flex
+				justify-content: space-between
+				padding: 0 45px	
+
+		.btn-holder
+			width: 100%
+			position: absolute
+			z-index: 2
+			padding: 0 15px 
+			display: flex
+			justify-content: space-between
+			top: 98px
+			left: 0
+			@include bp(1280, min)
+				width: 150px
+				position: static
+
+		.btn 
+			width: 30px
+			height: 30px
+			border-radius: 50% 
+			cursor: pointer
+			box-shadow: 0 10px 20px 0 rgba(0,0,0,0.10)
+			background: $orange
+			position: relative
+			@include bp(1280, min)
+				width: 40px
+				height: 40px
+			&:before, &:after
+				content: ''
+				position: absolute
+				width: 10px
+				border-bottom: 2px solid $white
+				transform-origin: right
+				right: 12px
+				@include bp(1280, min)	
+					right: 17px
+
+			&:before
+				top: 7px
+				transform: rotate(-45deg)
+				@include bp(1280, min)	
+					top: 12px
+
+			&:after
+				bottom: 7px
+				transform: rotate(45deg)
+				@include bp(1280, min)	
+					bottom: 12px
+
+			&.next
+				transform: rotate(180deg)
+				box-shadow: 0 -6px 20px 0 rgba(0,0,0,0.10)
+
+			&.disabled
+				background: $white
+				&:before, &:after
+					border-color: $gray
+
+	.about-row
+		color: $gray
+		display: flex
+		flex-direction: column 
+		align-items: center
+		max-width: 600px
+		margin: 0 auto 107px
+		@include bp(1280, min)
+			max-width: none
+			margin:  0 0 80px
+			flex-direction: row
+			justify-content: space-between
+
+		.img-holder
+			max-width: 328px
+			height: 211px
+			border-radius: 31px 
+			box-shadow: 19px 30px 20px -12px rgba(0,0,0,0.07)
+			margin-bottom: 31px
+			display: flex
+			align-items: center
+			justify-content: center
+			@include bp(1280, min)
+				width: 555px
+				height: 354px
+				max-width: none
+				border-radius: 65px
+
+			img 
+				max-width: 100%	
+				height: 100%
+				object-fit: cover
+
+		.text-holder 
+			@include bp(1280, min)
+				margin-right: 105px
+
+
+		&:nth-child(2n+1)
+			@include bp(1280, min)
+				flex-direction: row-reverse
+			.img-holder
+				display: block
+				overflow: hidden
+				img 
+					width: 100%
+
+			.text-holder 
+				@include bp(1280, min)
+					margin-left: 116px
+					margin-right: 0
+			
+		h3 
+			font-size: 22px 
+			margin-bottom: 15px
+			coor: $black
+			font-weight: 600
+			@include bp(1280, min)
+				font-size: 42px	
+				margin-bottom: 37px
+		
+		.text-holder 
+			@include bp(1280, min)
+				width: 458px
 
