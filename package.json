@@ -42,7 +42,7 @@
     "scroll-lock": "^1.3.5",
     "style-loader": "^0.19.1",
     "swiper": "^4.5.0",
-    "three": "^0.108.0",
+    "three": "^0.137.0",
     "three-gltf-loader": "^1.108.0",
     "three-obj-mtl-loader": "^1.0.3",
     "three-orbitcontrols": "^2.108.1",
